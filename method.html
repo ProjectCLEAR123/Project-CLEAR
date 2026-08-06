@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The CLEAR Method | Project CLEAR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <a href="index.html" class="site-logo">
+      Project Clear
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="about.html">About</a></li>
+      <li><a href="method.html">The CLEAR Method</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+  <main>
+
+    <section class="page-hero">
+      <p class="eyebrow">THE CLEAR METHOD</p>
+
+      <h1>Five steps for evaluating information</h1>
+
+      <p class="page-hero-text">
+        The CLEAR Method gives students a simple process they can use before
+        believing, reacting to, or sharing information.
+      </p>
+    </section>
+
+    <section class="content-section">
+
+      <div class="section-heading centered-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>Pause, investigate, and think clearly</h2>
+      </div>
+
+      <div class="method-list">
+
+        <article class="method-card">
+          <div class="method-letter">C</div>
+
+          <div>
+            <p class="eyebrow">STEP ONE</p>
+            <h3>Consider the claim</h3>
+            <p>
+              Identify exactly what the post, article, video, or person is
+              asking you to believe.
+            </p>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <div class="method-letter">L</div>
+
+          <div>
+            <p class="eyebrow">STEP TWO</p>
+            <h3>Look at the source</h3>
+            <p>
+              Find out who created the information and whether that person or
+              organization is qualified and trustworthy.
+            </p>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <div class="method-letter">E</div>
+
+          <div>
+            <p class="eyebrow">STEP THREE</p>
+            <h3>Examine the evidence</h3>
+            <p>
+              Check whether the claim includes reliable facts, research,
+              examples, quotations, or other supporting evidence.
+            </p>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <div class="method-letter">A</div>
+
+          <div>
+            <p class="eyebrow">STEP FOUR</p>
+            <h3>Ask what is missing</h3>
+            <p>
+              Think about missing context, opposing viewpoints, emotional
+              language, and information that may have been left out.
+            </p>
+          </div>
+        </article>
+
+        <article class="method-card">
+          <div class="method-letter">R</div>
+
+          <div>
+            <p class="eyebrow">STEP FIVE</p>
+            <h3>Reflect before sharing</h3>
+            <p>
+              Decide whether the information is accurate, useful, and
+              responsible to share with someone else.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="dark-callout">
+
+      <div>
+        <p class="eyebrow light-eyebrow">REMEMBER</p>
+
+        <h2>You do not have to react immediately</h2>
+
+        <p>
+          Taking a few extra moments to verify information can prevent
+          misinformation from spreading.
+        </p>
+      </div>
+
+      <a href="programs.html" class="light-button">
+        See Our Programs
+      </a>
+
+    </section>
+
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        Project CLEAR
+      </a>
+
+      <p>
+        Media literacy for the next generation.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-heading">Explore</p>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="method.html">The CLEAR Method</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <p class="footer-heading">Stay Connected</p>
+
+      <p>
+        Interested in learning more about Project CLEAR?
+      </p>
+
+      <a href="mailto:hello@projectclear.org">
+        calista.chun@gmail.com
+      </a>
+
+      <p>Los Angeles, California</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Project CLEAR. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuToggle.classList.toggle("open", menuIsOpen);
+      menuToggle.setAttribute("aria-expanded", menuIsOpen);
+    });
+  }
+</script>
+</body>
+</html>

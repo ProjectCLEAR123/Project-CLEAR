@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Programs | Project CLEAR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <a href="index.html" class="site-logo">
+      Project Clear
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="about.html">About</a></li>
+      <li><a href="method.html">The CLEAR Method</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+  <main>
+
+    <section class="page-hero">
+      <p class="eyebrow">OUR PROGRAMS</p>
+
+      <h1>Media-literacy education designed for students</h1>
+
+      <p class="page-hero-text">
+        Our programs give students practical opportunities to evaluate
+        sources, recognize misleading content, and discuss the responsibilities
+        of digital citizenship.
+      </p>
+    </section>
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <p class="eyebrow">WHAT WE OFFER</p>
+        <h2>Programs for schools and communities</h2>
+      </div>
+
+      <div class="program-grid">
+
+        <article class="program-card">
+          <div class="program-icon">01</div>
+
+          <h3>Student Workshops</h3>
+
+          <p>
+            Interactive workshops teach students how to analyze online
+            information using realistic examples and group activities.
+          </p>
+
+          <ul>
+            <li>Source evaluation</li>
+            <li>Misinformation identification</li>
+            <li>Responsible sharing</li>
+          </ul>
+        </article>
+
+        <article class="program-card">
+          <div class="program-icon">02</div>
+
+          <h3>School Partnerships</h3>
+
+          <p>
+            We work with schools to create media-literacy lessons that fit
+            existing classes, student needs, and school goals.
+          </p>
+
+          <ul>
+            <li>Custom lesson planning</li>
+            <li>Classroom activities</li>
+            <li>Teacher support</li>
+          </ul>
+        </article>
+
+        <article class="program-card">
+          <div class="program-icon">03</div>
+
+          <h3>Digital Resources</h3>
+
+          <p>
+            Students and educators can access guides, worksheets, discussion
+            prompts, and activities for continued learning.
+          </p>
+
+          <ul>
+            <li>Printable worksheets</li>
+            <li>Source-checking guides</li>
+            <li>Discussion questions</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </section>
+
+ <section class="light-section two-column">
+
+    <div class="educators-left">
+        <p class="eyebrow">FOR EDUCATORS</p>
+        <h2>Flexible materials for the classroom</h2>
+    </div>
+
+    <div class="educators-right">
+        <p>
+            Project CLEAR resources can be used in English, history, science,
+            journalism, advisory, or digital-citizenship courses. Lessons can
+            be taught individually or combined into a larger media-literacy unit.
+        </p>
+    </div>
+
+</section>
+
+    <section class="content-section centered-section">
+
+      <p class="eyebrow">LEARN WITH US</p>
+
+      <h2>Give students tools they can use beyond the classroom</h2>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        Project CLEAR
+      </a>
+
+      <p>
+        Media literacy for the next generation.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-heading">Explore</p>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="method.html">The CLEAR Method</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <p class="footer-heading">Stay Connected</p>
+
+      <p>
+        Interested in learning more about Project CLEAR?
+      </p>
+
+      <a href="mailto:hello@projectclear.org">
+        calista.chun@gmail.com
+      </a>
+
+      <p>Los Angeles, California</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Project CLEAR. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuToggle.classList.toggle("open", menuIsOpen);
+      menuToggle.setAttribute("aria-expanded", menuIsOpen);
+    });
+  }
+</script>
+</body>
+</html>

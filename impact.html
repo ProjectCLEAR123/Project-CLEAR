@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Impact | Project CLEAR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <a href="index.html" class="site-logo">
+      Project Clear
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="main-navigation">
+      <li><a href="about.html">About</a></li>
+      <li><a href="method.html">Our Method</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+  <main>
+
+    <section class="page-hero">
+      <p class="eyebrow">OUR IMPACT</p>
+
+      <h1>Building more thoughtful digital communities</h1>
+
+      <p class="page-hero-text">
+        Project CLEAR helps students feel more confident when evaluating
+        information and making decisions about what they see online.
+      </p>
+    </section>
+
+    <section class="stats-section">
+
+      <article class="stat-card">
+        <span class="stat-number">150+</span>
+        <p>Students reached</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-number">20+</span>
+        <p>Workshops completed</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-number">10+</span>
+        <p>School partnerships</p>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-number">5</span>
+        <p>Steps in the CLEAR Method</p>
+      </article>
+
+    </section>
+
+    <section class="content-section two-column">
+
+      <div>
+        <p class="eyebrow">WHY IT MATTERS</p>
+        <h2>Students need skills, not just warnings</h2>
+      </div>
+
+      <div>
+        <p>
+          Simply telling students that misinformation exists is not enough.
+          Students need a process they can practice and remember when they
+          encounter questionable content.
+        </p>
+
+        <p>
+          Through guided examples and discussion, students learn to identify
+          credible sources, examine evidence, recognize emotional language, and
+          reflect before sharing.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="light-section">
+
+      <div class="section-heading centered-heading">
+        <p class="eyebrow">STUDENT EXPERIENCES</p>
+        <h2>What participants are learning</h2>
+      </div>
+
+      <div class="testimonial-grid">
+
+        <blockquote class="testimonial-card">
+          <p>
+            “I learned that I should check who created a post before assuming
+            that it is true.”
+          </p>
+
+          <cite>— Student participant</cite>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p>
+            “The CLEAR Method gave me steps that are easy to remember when I
+            see something suspicious online.”
+          </p>
+
+          <cite>— Student participant</cite>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p>
+            “The activities made media literacy feel connected to the things
+            students see every day.”
+          </p>
+
+          <cite>— Educator</cite>
+        </blockquote>
+
+      </div>
+
+    </section>
+
+<section class="dark-callout">
+    <div class="callout-content">
+
+        <p class="eyebrow light-eyebrow">HELP US GROW</p>
+
+        <h2>Support the next generation of digital citizens</h2>
+
+        <p>
+            Partner with Project CLEAR to bring media-literacy education to
+            more students.
+        </p>
+
+    </div>
+</section>
+
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        Project CLEAR
+      </a>
+
+      <p>
+        Media literacy for the next generation.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-heading">Explore</p>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="method.html">The CLEAR Method</a>
+        <a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <p class="footer-heading">Stay Connected</p>
+
+      <p>
+        Interested in learning more about Project CLEAR?
+      </p>
+
+      <a href="mailto:hello@projectclear.org">
+        calista.chun@gmail.com
+      </a>
+
+      <p>Los Angeles, California</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Project CLEAR. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuToggle.classList.toggle("open", menuIsOpen);
+      menuToggle.setAttribute("aria-expanded", menuIsOpen);
+    });
+  }
+</script>
+</body>
+</html>
