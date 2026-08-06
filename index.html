@@ -351,11 +351,11 @@
 
     const nextIndex = (currentIndexes[activeCard] + 1) % imageSet.length;
 
-    nextImage.src = imageSet[nextIndex];
+    nextImage.src = ImageSet[nextIndex];
     card.classList.add("is-changing");
 
     setTimeout(() => {
-      currentImage.src = imageSet[nextIndex];
+      currentImage.src = ImageSet[nextIndex];
       card.classList.remove("is-changing");
       currentIndexes[activeCard] = nextIndex;
       activeCard = (activeCard + 1) % shuffleCards.length;
