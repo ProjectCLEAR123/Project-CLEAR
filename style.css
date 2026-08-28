@@ -1297,33 +1297,47 @@ p {
    SMOOTH IMAGE CROSSFADE
 ================================= */
 
+.shuffle-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #ece8e1;
+  box-shadow: 0 12px 30px rgba(23, 63, 104, 0.08);
+}
+
+.shuffle-card-featured {
+  grid-row: 1 / 3;
+}
+
+/* BOTH IMAGES STACK DIRECTLY ON TOP OF EACH OTHER */
 .shuffle-current,
 .shuffle-next {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
 
-  display: block;
   width: 100%;
   height: 100%;
 
   object-fit: cover;
+  display: block;
 
   transition: opacity 0.9s ease-in-out;
 }
 
-/* Image currently being shown */
+/* Current image */
 .shuffle-current {
   z-index: 1;
   opacity: 1;
 }
 
-/* New image sits invisibly on top */
+/* Incoming image */
 .shuffle-next {
   z-index: 2;
   opacity: 0;
 }
 
-/* Fade the new image over the old image */
+/* Crossfade */
 .shuffle-card.crossfade .shuffle-next {
   opacity: 1;
 }
