@@ -1287,41 +1287,54 @@ p {
   box-shadow: 0 12px 30px rgba(23, 63, 104, 0.08);
 }
 
+/* Large image on the left */
 .shuffle-card-featured {
   grid-row: 1 / 3;
 }
 
-.shuffle-layer {
+
+/* =================================
+   SMOOTH IMAGE CROSSFADE
+================================= */
+
+.shuffle-current,
+.shuffle-next {
   position: absolute;
   inset: 0;
+
   display: block;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition:
-    opacity 0.9s ease,
-    transform 6s ease;
+
+  transition: opacity 0.9s ease-in-out;
 }
 
-.shuffle-layer-current {
+/* Image currently being shown */
+.shuffle-current {
   z-index: 1;
   opacity: 1;
 }
 
-.shuffle-layer-next {
+/* New image sits invisibly on top */
+.shuffle-next {
   z-index: 2;
   opacity: 0;
 }
 
-.shuffle-card.is-changing .shuffle-layer-next {
+/* Fade the new image over the old image */
+.shuffle-card.crossfade .shuffle-next {
   opacity: 1;
 }
 
-.shuffle-card:hover .shuffle-layer {
-  transform: scale(1.035);
-}
+
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 900px) {
+
   .photo-shuffle-section {
     padding: 80px 6% 90px;
   }
@@ -1337,7 +1350,13 @@ p {
   }
 }
 
+
+/* =================================
+   MOBILE
+================================= */
+
 @media (max-width: 620px) {
+
   .photo-shuffle-grid {
     display: flex;
     flex-direction: column;
@@ -1351,7 +1370,6 @@ p {
   .shuffle-card-featured {
     height: 320px;
   }
-
   .photo-shuffle-heading h2 {
     font-size: 2.65rem;
   }
@@ -1762,4 +1780,17 @@ section.dark-callout .callout-content > p:last-child {
   .team-member {
     border-radius: 22px;
   }
+}
+.shuffle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 1;
+
+  transition: opacity 0.35s ease;
+}
+
+.shuffle-image.fade-out {
+  opacity: 0;
 }

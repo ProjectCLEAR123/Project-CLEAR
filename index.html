@@ -57,77 +57,82 @@
   <div class="photo-shuffle-heading">
     <p class="section-label">COMMUNITY IN ACTION</p>
 
-    <h2>See Project Clear at work</h2>
+    <h2>See Project CLEAR at work</h2>
 
     <p>
-      A look at Project Clear’s community events, school programs,
+      A look at Project CLEAR's community events, school programs,
       environmental activities, and youth leadership experiences.
     </p>
   </div>
 
   <div class="photo-shuffle-grid">
 
-    <div class="shuffle-card shuffle-card-featured" data-set="0">
+    <!-- Large left image -->
+    <div class="shuffle-card shuffle-card-featured">
       <img
-        class="shuffle-layer shuffle-layer-current"
+        class="shuffle-current"
         src="Images/manhattan1.png"
-        alt="Project Clear event in Manhattan Beach"
+        alt="Project CLEAR event in Manhattan Beach"
       >
       <img
-        class="shuffle-layer shuffle-layer-next"
+        class="shuffle-next"
         src="Images/manhattan2.png"
         alt=""
       >
     </div>
 
-    <div class="shuffle-card" data-set="1">
+    <!-- Top middle -->
+    <div class="shuffle-card">
       <img
-        class="shuffle-layer shuffle-layer-current"
+        class="shuffle-current"
         src="Images/pacific1.png"
-        alt="Project Clear event at Pacific Elementary School"
+        alt="Project CLEAR school program"
       >
       <img
-        class="shuffle-layer shuffle-layer-next"
+        class="shuffle-next"
         src="Images/pacific2.png"
         alt=""
       >
     </div>
 
-    <div class="shuffle-card" data-set="2">
+    <!-- Top right -->
+    <div class="shuffle-card">
       <img
-        class="shuffle-layer shuffle-layer-current"
+        class="shuffle-current"
         src="Images/troops1.png"
-        alt="Project Clear activity with Girl Scouts"
+        alt="Project CLEAR Girl Scouts program"
       >
       <img
-        class="shuffle-layer shuffle-layer-next"
+        class="shuffle-next"
         src="Images/troops2.png"
         alt=""
       >
     </div>
 
-    <div class="shuffle-card" data-set="3">
+    <!-- Bottom middle -->
+    <div class="shuffle-card">
       <img
-        class="shuffle-layer shuffle-layer-current"
+        class="shuffle-current"
         src="Images/manhattan4.png"
-        alt="Project Clear community presentation"
+        alt="Project CLEAR community event"
       >
       <img
-        class="shuffle-layer shuffle-layer-next"
+        class="shuffle-next"
         src="Images/manhattan5.png"
         alt=""
       >
     </div>
 
-    <div class="shuffle-card" data-set="4">
+    <!-- Bottom right -->
+    <div class="shuffle-card">
       <img
-        class="shuffle-layer shuffle-layer-current"
+        class="shuffle-current"
         src="Images/pacific3.png"
-        alt="Students participating in a Project Clear program"
+        alt="Project CLEAR student program"
       >
       <img
-        class="shuffle-layer shuffle-layer-next"
-        src="Images/troops3.png"
+        class="shuffle-next"
+        src="Images/pacific4.png"
         alt=""
       >
     </div>
@@ -297,75 +302,78 @@
 </script>
 <script>
   const photoSets = [
-    [
-      "Images/manhattan1.png",
-      "Images/manhattan2.png",
-      "Images/manhattan3.png",
-      "Images/manhattan4.png",
-      "Images/manhattan5.png",
-      "Images/manhattan6.png",
-      "Images/manhattan7.png",
-      "Images/manhattan8.png"
-    ],
-    [
-      "Images/pacific1.png",
-      "Images/pacific2.png",
-      "Images/pacific3.png",
-      "Images/pacific4.png"
-    ],
-    [
-      "Images/troops1.png",
-      "Images/troops2.png",
-      "Images/troops3.png"
-    ],
-    [
-      "Images/manhattan4.png",
-      "Images/manhattan5.png",
-      "Images/manhattan6.png",
-      "Images/manhattan7.png",
-      "Images/manhattan8.png"
-    ],
-    [
-      "Images/pacific3.png",
-      "Images/pacific4.png",
-      "Images/troops1.png",
-      "Images/troops2.png",
-      "Images/troops3.png"
-    ]
-  ];
+  [
+    "Images/manhattan1.png",
+    "Images/manhattan2.png",
+    "Images/manhattan3.png",
+    "Images/manhattan4.png",
+    "Images/manhattan5.png",
+    "Images/manhattan6.png",
+    "Images/manhattan7.png",
+    "Images/manhattan8.png"
+  ],
+  [
+    "Images/pacific1.png",
+    "Images/pacific2.png",
+    "Images/pacific3.png",
+    "Images/pacific4.png"
+  ],
+  [
+    "Images/troops1.png",
+    "Images/troops2.png",
+    "Images/troops3.png"
+  ],
+  [
+    "Images/manhattan4.png",
+    "Images/manhattan5.png",
+    "Images/manhattan6.png",
+    "Images/manhattan7.png",
+    "Images/manhattan8.png"
+  ],
+  [
+    "Images/pacific3.png",
+    "Images/pacific4.png",
+    "Images/troops1.png",
+    "Images/troops2.png",
+    "Images/troops3.png"
+  ]
+];
 
-  const shuffleCards = document.querySelectorAll(".shuffle-card");
-  const currentIndexes = Array(shuffleCards.length).fill(0);
-  let activeCard = 0;
+const shuffleCards = document.querySelectorAll(".shuffle-card");
 
-  function changePhoto() {
-    const card = shuffleCards[activeCard];
+let indexes = [0, 0, 0, 0, 0];
+let activeCard = 0;
 
-    if (!card) return;
+function shuffleOnePhoto() {
+  const card = shuffleCards[activeCard];
+  const set = photoSets[activeCard];
 
-    const setIndex = Number(card.dataset.set);
-    const imageSet = photoSets[setIndex];
+  if (!card || !set) return;
 
-    const currentImage = card.querySelector(".shuffle-layer-current");
-    const nextImage = card.querySelector(".shuffle-layer-next");
+  const current = card.querySelector(".shuffle-current");
+  const next = card.querySelector(".shuffle-next");
 
-    if (!imageSet || !currentImage || !nextImage) return;
+  const nextIndex =
+    (indexes[activeCard] + 1) % set.length;
 
-    const nextIndex = (currentIndexes[activeCard] + 1) % imageSet.length;
+  next.src = set[nextIndex];
 
-    nextImage.src = ImageSet[nextIndex];
-    card.classList.add("is-changing");
+  card.classList.add("crossfade");
 
-    setTimeout(() => {
-      currentImage.src = ImageSet[nextIndex];
-      card.classList.remove("is-changing");
-      currentIndexes[activeCard] = nextIndex;
-      activeCard = (activeCard + 1) % shuffleCards.length;
-    }, 900);
-  }
+  setTimeout(() => {
+    current.src = set[nextIndex];
 
-  setInterval(changePhoto, 3200);
+    card.classList.remove("crossfade");
+
+    indexes[activeCard] = nextIndex;
+
+    activeCard =
+      (activeCard + 1) % shuffleCards.length;
+  }, 800);
+}
+
+setInterval(shuffleOnePhoto, 2600);
 </script>
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 </body>
 </html>
